@@ -1,0 +1,119 @@
+* header {
+  padding-top: 03%;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid #ccc;
+}
+h1 {
+  color: green;
+}
+
+ a:hover {
+  background-color: white;
+} 
+
+.button-text-color {
+  color: green;
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+.img-container img {
+  display: block;
+}
+.center {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* The sidebar menu */
+.sidenav {
+  height: 100%;
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 100px; /* Stay at the top */
+  left: 10px;
+  background-color: lightcyan; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+ .sidenav a:hover {
+  color: #f1f1f1;
+} 
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+container {
+  display: grid;
+}
+
+.card {
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+}
+
+.bg-img {
+  background-size: cover;
+  min-height: 180px;
+  background-position: center;
+  background-color: #ccc;
+}
+
+.content {
+  padding: 15px;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #2196F3;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  border-radius: .25rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-gap: 20px;
+
+}
+
+* footer {
+  padding-bottom: 03%;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-top: 1px solid #ccc;
+}
