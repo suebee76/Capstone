@@ -117,6 +117,10 @@ container {
   border-color: green;
 }
 
+.card:hover {
+  box-shadow: 0 8px 12px 0 rgba(34, 60, 80, 0.16);
+}
+
 .card-img {
   width: 355px;
   height: 350px;
@@ -147,6 +151,11 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   padding-top: 10px;
+}
+
+hr {
+  border: 0;
+  height: 5px;
 }
 
 * footer {
