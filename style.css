@@ -34,8 +34,15 @@ h1 {
   text-shadow: 1px 1px 1px #ccc;
 }
 
-a:hover {
+h2 {
+  color: green;
+}
+
+a:hover,
+a:active {
   background-color: white;
+
+  font-size: 150%;
 }
 
 .button-text-color {
