@@ -1,10 +1,26 @@
+@media only screen and (max-width: 600px) {
+  #quote {
+    display: none;
+  }
+}
+
 * header {
   padding-top: 03%;
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #ccc;
   background-image: url("");
+}
+
+.navbar {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
 }
 
 body {
@@ -38,11 +54,27 @@ h2 {
   color: green;
 }
 
+/* a:not(.card) {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 1;
+} */
+
 a:hover,
 a:active {
-  background-color: white;
-
-  font-size: 150%;
+  background-color: green;
+  opacity: 9;
+  border-radius: 0.25rem;
 }
 
 .button-text-color {
@@ -64,57 +96,14 @@ a:active {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/* The sidebar menu */
-.sidenav {
-  height: 100%;
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 100px; /* Stay at the top */
-  left: 10px;
-  background-color: lightcyan; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Style page content */
-.main {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 
 container {
   display: grid;
 }
 
 .card {
-  border: 2px solid #d3d3d3;
+  border: 2px solid green;
   border-radius: 0.25rem;
-  border-color: green;
 }
 
 .card:hover {
@@ -150,7 +139,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 hr {
