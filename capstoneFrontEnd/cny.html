@@ -38,9 +38,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Favorites</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">????</a>
-              </li>
+             
                
             </ul>
             <form class="d-flex">
@@ -50,7 +48,7 @@
           </div>
         </div>
       </nav>
-     <div class="grid-container">
+     <div class="row" id="festivalCards">
       <div class="card">
       <div class="bg-img"><img src="images/festivalexample.jpg" class="card-img" alt="..."></div>
       <div class="content">
@@ -58,7 +56,7 @@
         <h4>June 24-25-26 2021</h4>
         <p>The New York State Blues Festival is one of the largest FREE blues events in the Northeast. This annual 3 day musical celebration, showcases a collection of regional and national artists from multiple genres, all with roots steeped in tradition and vision, and arranges them for a continuous river of music.
 
-          The mission of the NYS Blues Festival is to preserve, protect and promote blues music and culture. </p> <button class="btn btn-outline-success" type="button" 
+          The mission of the NYS Blues Festival is to preserve, protect and promote blues music and culture. </p> <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
         onclick="window.open('https://www.nysbluesfest.com/')">NYS Blues Festival</button> </div>
       </div>
       <div class="card">
@@ -105,4 +103,32 @@
     </footer>
   </body>
   <script src="script.js"></script>
+  <script>
+    (async ()=>{
+      const festivalsRaw = await fetch(`http://localhost:3001/festivals/:1`);
+    const festivalsData = await festivalsRaw.json();
+    let html = ``;
+    console.log(festivalsData.festivals)
+    festivalsData.festivals.map(festival=>{
+      html += `<div class="col-4"><div class="card">
+      <div class="bg-img">
+        <img src="${festival.image}" class="card-img" alt="...">
+      </div>
+      <div class="content">
+        <h4 class=title>${festival.title}</h4>
+        <p>${festival.paragraph}</p> 
+        <h4>${festival.date}</h4> 
+        </br>
+        <div style="display:flex;justify-content:center;align-items:center;">
+        <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
+        onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
+        </div>
+        </div>
+      </div>
+      </div>`
+    })
+    document.getElementById("festivalCards").innerHTML = html;
+    })()
+    
+  </script>
 </html>
