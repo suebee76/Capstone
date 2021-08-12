@@ -49,7 +49,7 @@
         </div>
       </nav>
      <div class="row" id="festivalCards">
-      <div class="card">
+      <!-- <div class="card">
       <div class="bg-img"><img src="images/festivalexample.jpg" class="card-img" alt="..."></div>
       <div class="content">
         <h4>New York State Blues Festival</h4>
@@ -58,7 +58,7 @@
 
           The mission of the NYS Blues Festival is to preserve, protect and promote blues music and culture. </p> <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
         onclick="window.open('https://www.nysbluesfest.com/')">NYS Blues Festival</button> </div>
-      </div>
+      </div> -->
       <div class="card">
         <div class="bg-img"></div>
         <div class="content">
@@ -105,7 +105,7 @@
   <script src="script.js"></script>
   <script>
     (async ()=>{
-      const festivalsRaw = await fetch(`http://localhost:3001/festivals/:1`);
+      const festivalsRaw = await fetch(`http://localhost:3001/festivals/Central`);
     const festivalsData = await festivalsRaw.json();
     let html = ``;
     console.log(festivalsData.festivals)

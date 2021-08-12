@@ -20,7 +20,7 @@
   <body>
     <div class="container">
       <header class="text-center-row">
-        <h1>nyc area music festivals</h1>
+        <h1>New York City area music festivals</h1>
       </header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -49,6 +49,7 @@
           </div>
         </div>
       </nav>
+      <div class="row" id="festivalCards">
      <div class="grid-container">
       <div class="card">
       <div class="bg-img"><img src="images/festivalexample.jpg" class="card-img" alt="..."></div>
@@ -100,4 +101,32 @@
     </footer>
   </body>
   <script src="script.js"></script>
+  <script>
+    (async ()=>{
+      const festivalsRaw = await fetch(`http://localhost:3001/festivals/New York City`);
+    const festivalsData = await festivalsRaw.json();
+    let html = ``;
+    console.log(festivalsData.festivals)
+    festivalsData.festivals.map(festival=>{
+      html += `<div class="col-4"><div class="card">
+      <div class="bg-img">
+        <img src="${festival.image}" class="card-img" alt="...">
+      </div>
+      <div class="content">
+        <h4 class=title>${festival.title}</h4>
+        <p>${festival.paragraph}</p> 
+        <h4>${festival.date}</h4> 
+        </br>
+        <div style="display:flex;justify-content:center;align-items:center;">
+        <button class="btn btn-outline-success" type="button" 
+        onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
+        </div>
+        </div>
+      </div>
+      </div>`
+    })
+    document.getElementById("festivalCards").innerHTML = html;
+    })()
+    
+  </script>
 </html>

@@ -18,6 +18,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      alert("No music yet! Join our newsletter for updates!");
+    </script>
   </head>
   <body>
     <div class="container">
@@ -51,6 +54,7 @@
           </div>
         </div>
       </nav>
+      <div class="row" id="festivalCards">
      <div class="grid-container">
       <div class="card">
       <div class="bg-img"><img src="images/festivalexample.jpg" class="card-img" alt="..."></div>
@@ -102,9 +106,34 @@
     </footer>
   </body>
   <script src="script.js"></script>
+  <script>
+    (async ()=>{
+      const festivalsRaw = await fetch(`http://localhost:3001/festivals/Southern`);
+    const festivalsData = await festivalsRaw.json();
+    let html = ``;
+    console.log(festivalsData.festivals)
+    festivalsData.festivals.map(festival=>{
+      html += `<div class="col-4"><div class="card">
+      <div class="bg-img">
+        <img src="${festival.image}" class="card-img" alt="...">
+      </div>
+      <div class="content">
+        <h4 class=title>${festival.title}</h4>
+        <p>${festival.paragraph}</p> 
+        <h4>${festival.date}</h4> 
+        </br>
+        <div style="display:flex;justify-content:center;align-items:center;">
+        <button class="btn btn-outline-success" type="button" 
+        onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
+        </div>
+        </div>
+      </div>
+      </div>`
+    })
+    document.getElementById("festivalCards").innerHTML = html;
+    })()
+    
+  </script>
 </html>
 
-    </div>
-  </body>
-  <script src="script.js"></script>
-</html>
+   

@@ -48,6 +48,7 @@
           </div>
         </div>
       </nav>
+      <div class="row" id="festivalCards">
      <div class="grid-container">
       <div class="card">
       <div class="bg-img"><img src="images/festivalexample.jpg" class="card-img" alt="..."></div>
@@ -101,7 +102,7 @@
   <script src="script.js"></script>
   <script>
     (async ()=>{
-      const festivalsRaw = await fetch(`http://localhost:3001/festivals/:2`);
+      const festivalsRaw = await fetch(`http://localhost:3001/festivals/Western`);
     const festivalsData = await festivalsRaw.json();
     let html = ``;
     console.log(festivalsData.festivals)

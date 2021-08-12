@@ -4,6 +4,7 @@ const quotes = [
   '<b>"Without music, life would be a mistake." <i>-Friedrich Nietzsches</i></b>',
 
   '<b>"Where words fail, music speaks." <i>-Hans Christian Andersen</i></b>',
+  '<b>"Magic is what we do. Music is how we do it. " <i>-Jerry Garcia</i></b>',
 
   '<b>"Music is to the soul what words are to the mind." <i>-Modest Mouse</i></b>',
   '<b>"Music is life itself." <i>-Louis Armstrong</i></b>',
