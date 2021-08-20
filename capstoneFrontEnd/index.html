@@ -44,9 +44,10 @@
               
                 </ul>
              
-            <form class="d-flex" id="searchform" role="search">
-              <input class="form-control me-2" type="search" name= "name" placeholder="Search Festivals" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+            <form action="searchResults.html" class="d-flex" id="searchform" role="search">
+              <input class="form-control me-2" id="search" type="search" name="search" placeholder="Search Festivals" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" >Search</button>
+             
             </form>
           </div>
         </div>
@@ -173,4 +174,44 @@
 
   </body>
   <script src="script.js"></script>
+  <script>
+
+let params = new URLSearchParams(window.location.search);
+console.log(window.location.search)
+const searchTerm = params.get("search");
+console.log(params, searchTerm)
+  
+
+async function searchResults(){
+  console.log(`http://localhost:3001/search/${searchTerm}`)
+  const response = await fetch("http://localhost:3001/search/${searchTerm}");
+  const data = await response.json();
+  console.log(data);}
+  // let html = ``;
+  //   console.log(festivalsData.festivals)
+  //   festivalsData.festivals.map(festival=>{
+  //     html += `<div class="col-4"><div class="card">
+  //     <div class="bg-img">
+  //       <img src="${festival.image}" class="card-img" alt="...">
+  //     </div>
+  //     <div class="content">
+  //       <h4 class=title>${festival.title}</h4>
+  //       <p>${festival.paragraph}</p> 
+  //       <h4>${festival.date}</h4> 
+  //       </br>
+  //       <div style="display:flex;justify-content:center;align-items:center;">
+  //       <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
+  //       onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
+  //       </div>
+  //       </div>
+  //     </div>
+  //     </div>`
+  //   })
+  //   document.getElementById("festivalCards").innerHTML = html;
+  //   }
+ searchResults(); 
+
+
+
+  </script>
 </html>
