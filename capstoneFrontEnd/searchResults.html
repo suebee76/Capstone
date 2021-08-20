@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+   
+    
+  
+        <div class="container">
+            <header class="text-center-row">
+                <h1>SEARCH RESULTS</h1>
+              </header>
+        
+          <!-- <header class="text-center row">
+         <h1 id="quote"> <script  src="musicquotes.js"></script></h1> -->
+           <!-- </header> -->
+           
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Favorites</a>
+                  
+                    </ul>
+                 
+                <form action="searchResults.html" class="d-flex" id="searchform" role="search">
+                  <input class="form-control me-2" id="search" type="search" name="search" placeholder="Search Festivals" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit" >Search</button>
+                  <!-- <button class="btn btn-outline-success" type="submit" onInput="onInput()">Search</button> -->
+                </form>
+              </div>
+            </div>
+          </nav>
+         <div class = "row" id="festivalCards">
+
+         </div>
+            
+          <!-- <main> 
+          <div class="grid-container">
+     -->
+            <!-- <div class="card">
+            <div class="bg-img">
+           <img  src="images/westernny.jpg" class="card-img" alt="...">
+            </div>
+             <button class="btn btn-outline-success" type="button" value="Western NY"
+            onclick="window.open('westernny.html')">Western NY</button>
+            </div>
+    
+             <div class="card text-green text-center">
+               <img src="images/westernny.jpg" class="card-img" alt="...">
+                 <div class="card-img-overlay">
+                  </br></br></br></br></br></br>
+                    
+                  <a href="westernny.html"   target="_blank" onclick="window.open('westernny.html')" class="stretched-link"></a>
+                 </div>
+                 <h2 class="card-text"><strong>Western NY</strong></h2>
+             </div>
+    
+            <div class="card text-green text-center">
+              <img src="images/onondagacountymap.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+               </br></br></br></br></br></br>
+               <a href="cny.html"   target="_blank" onclick="window.open('cny.html')" class="stretched-link"></a>
+              </div>
+              <h2 class="card-text"><strong>Central NY</strong></h2>
+            </div>
+            
+           <div class="card text-green text-center">
+                <img src="images/fingerlakesmap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="fingerlakes.html"   target="_blank" onclick="window.open('fingerlakes.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>Finger Lakes</strong></h2>
+              </div>
+    
+              <div class="card text-green text-center">
+                <img src="images/southerntiermap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="southerntier.html"   target="_blank" onclick="window.open('southerntier.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>Southern Tier</strong></h2>
+              </div>
+    
+              <div class="card text-green text-center">
+                <img src="images/mohawkvalleysheetmusic.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="mohawkvalley.html"   target="_blank" onclick="window.open('mohawkvalley.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>Mohawk Valley</strong></h2>
+              </div>
+                  
+              <div class="card text-green text-center">
+                <img src="images/capitaldistrictmap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="capitaldistrict.html"   target="_blank" onclick="window.open('capitaldistrict.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>Capital District</strong></h2>
+              </div>
+               
+              <div class="card text-green text-center">
+                <img src="images/longislandmap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="longisland.html"   target="_blank" onclick="window.open('longisland.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>Long Island</strong></h2>
+              </div>
+                    
+              <div class="card text-green text-center">
+                <img src="images/northcountrymap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="northcountry.html"   target="_blank" onclick="window.open('northcountry.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>North Country</strong></h2>
+              </div>
+                    
+              <div class="card text-green text-center">
+                <img src="images/hudsonvalleymap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="hudsonvalley.html"   target="_blank" onclick="window.open('hudsonvalley.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>Hudson Valley</strong></h2>
+              </div>
+    
+              <div class="card text-green text-center">
+                <img src="images/1863nycmap.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                 </br></br></br></br></br></br>
+                 <a href="nyc.html"   target="_blank" onclick="window.open('nyc.html')" class="stretched-link"></a>
+                </div>
+                <h2 class="card-text"><strong>New York City</strong></h2>
+              </div>  
+    
+            </div>
+          </main>
+        </div> -->
+          <footer class="text-center">
+            <div id="content">
+              </br>
+              
+              <p>Sign up for news and updates!</p>
+              <input type="email" placeholder="Email"></input>
+              <button class="btn btn-outline-success">Sign Up</button>
+              </br>
+              </br>
+                <p>© SMB 2021 </p>
+            </div>
+          </footer>
+    
+      
+  </body>
+</html>
