@@ -1,0 +1,4 @@
+(async ()=>{ const search = await fetch(`http://localhost:3001/search`); const
+searchResults = await search.json(); let html = ``;
+console.log(searchResults.search) searchResults.search.map(search=>{ html += ``
+}) document.getElementById("search").innerHTML = html; })()

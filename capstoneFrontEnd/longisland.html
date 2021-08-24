@@ -104,6 +104,20 @@
   </body>
   <script src="script.js"></script>
   <script>
+    function favorite (festivalID){
+      if (!window.localStorage.favoriteFestivals){
+window.localStorage.favoriteFestivals = "";
+}
+const favoriteFestivals = window.localStorage.favoriteFestivals.split(",");
+if (favoriteFestivals.includes(`${festivalID}`)){
+alert("You already favorited this");
+} else {
+favoriteFestivals.push(festivalID);
+alert("Added to your favorites");
+window.localStorage.favoriteFestivals = favoriteFestivals.join(",");
+}
+      
+    }
     (async ()=>{
       const festivalsRaw = await fetch(`http://localhost:3001/festivals/Long`);
     const festivalsData = await festivalsRaw.json();
@@ -111,19 +125,23 @@
     console.log(festivalsData.festivals)
     festivalsData.festivals.map(festival=>{
       html += `<div class="col-4"><div class="card">
-      <div class="bg-img">
-        <img src="${festival.image}" class="card-img" alt="...">
-      </div>
+          <div class="bg-img">
+             <img src="${festival.image}" class="card-img" alt="...">
+          </div>
       <div class="content">
         <h4 class=title>${festival.title}</h4>
         <p>${festival.paragraph}</p> 
         <h4>${festival.date}</h4> 
         </br>
-        <div style="display:flex;justify-content:center;align-items:center;">
-        <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
-        onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
-        </div>
-        </div>
+        <div class="row">
+         <div style="display:flex;justify-content:center;align-items:center;">
+         <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
+         onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
+         <button  class="btn btn-outline-success fave-button" onclick="favorite(${festival.festivalID})">&#127925;</button>
+         </div>
+         </div>
+         
+      </div>
       </div>
       </div>`
     })
