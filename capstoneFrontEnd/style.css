@@ -92,9 +92,9 @@ a:active {
   color: green;
 }
 
-/* .fave-button {
-  margin-left: 60px;
-} */
+.fave-button {
+  margin-left: 100px;
+}
 
 .img-container {
   position: relative;

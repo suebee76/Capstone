@@ -104,7 +104,20 @@
   </body>
   <script src="script.js"></script>
   <script>
+   
     function favorite (festivalID){
+
+      const faveButton = document.getElementById("faveButton");
+
+faveButton.addEventListener("click", ()=>{
+
+    if(faveButton.innerText === "🎵"){
+        faveButton.innerText = "🎶";
+    }else{
+        faveButton.innerText= "🎵";
+    }
+});
+
       if (!window.localStorage.favoriteFestivals){
 window.localStorage.favoriteFestivals = "";
 }
@@ -137,8 +150,9 @@ window.localStorage.favoriteFestivals = favoriteFestivals.join(",");
          <div style="display:flex;justify-content:center;align-items:center;">
          <button data-cy="bluesfestlink" class="btn btn-outline-success" type="button" 
          onclick="window.open('${festival.buttonURL}')">${festival.buttonText}</button>
-         <button  class="btn btn-outline-success fave-button" onclick="favorite(${festival.festivalID})">&#127925;</button>
+         <button id="faveButton" class="btn btn-outline-success fave-button" value="" onclick="favorite(${festival.festivalID}); click()">&#127925;</button>
          </div>
+         
          </div>
          
       </div>
@@ -150,5 +164,3 @@ window.localStorage.favoriteFestivals = favoriteFestivals.join(",");
     
   </script>
 </html>
-
-    
